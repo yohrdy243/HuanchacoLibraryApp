@@ -5,9 +5,14 @@
       <w>carrera</w>
       <w>categoria</w>
       <w>ejemplar</w>
+      <w>estudiante</w>
+      <w>estudiantefk</w>
+      <w>fecha</w>
       <w>libro</w>
+      <w>librofk</w>
       <w>nombre</w>
       <w>nombres</w>
+      <w>reserva</w>
     </words>
   </dictionary>
 </component>
