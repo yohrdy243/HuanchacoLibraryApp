@@ -4,24 +4,31 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 class Libro {
-    @SerializedName("id_Libro")
+    @SerializedName("idLibro")
     @Expose
     var idLibro =0
 
-    @SerializedName("nombre_Libro")
+    @SerializedName("nombreLibro")
     @Expose
     var nombreLibro: String? = null
 
-    @SerializedName("editorial_Libro")
+    @SerializedName("editorialLibro")
     @Expose
     var editorialLibro: String? = null
 
-    @SerializedName("categoria_Libro")
+    @SerializedName("categoriaLibro")
     @Expose
     var categoriaLibro: String? = null
 
-    @SerializedName("ejemplar_Libro")
+    @SerializedName("ejemplarLibro")
     @Expose
     var ejemplarLibro: String? =null
 
+    constructor(idLibro: Int, nombreLibro: String?, editorialLibro: String?, categoriaLibro: String?, ejemplarLibro: String?){
+        this.idLibro=idLibro
+        this.nombreLibro=nombreLibro
+        this.editorialLibro=editorialLibro
+        this.categoriaLibro=categoriaLibro
+        this.ejemplarLibro=ejemplarLibro
+    }
 }
