@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="50dp"
+        android:src="@mipmap/ic_launcher_round"></ImageView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-300dp"
+        android:layout_marginTop="400dp"
+        android:layout_marginRight="55dp"
+        android:text="Bienvenido!!"
+        android:textAlignment="center"
+        android:textSize="30dp"></TextView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-350dp"
+        android:layout_marginTop="450dp"
+        android:textSize="16dp"
+        android:text="Usuario"></TextView>
+
+    <EditText
+        android:id="@+id/et_usuario"
+        android:layout_width="294dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="-55dp"
+        android:layout_marginTop="480dp"></EditText>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-295dp"
+        android:layout_marginTop="525dp"
+        android:text="Contraseña"
+        android:textSize="16dp"></TextView>
+
+    <EditText
+        android:id="@+id/et_contraseña"
+        android:layout_width="294dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="-80dp"
+        android:layout_marginTop="555dp">
+    </EditText>
+    <Button
+        android:id="@+id/btn_ingresar"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="-220dp"
+        android:layout_marginTop="650dp"
+        android:text="Ingresar"
+        android:textColor="@android:color/white"
+        android:background="@android:color/holo_green_light">
+    </Button>
+</LinearLayout>

@@ -15,12 +15,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(findViewById(R.id.toolbar))
-        val context: Context = this
-        //no borrar
-        val intent = Intent(context,MenuSlideActivity::class.java)
-        startActivity(intent)
-        //no borrar
+
 
 
     }
