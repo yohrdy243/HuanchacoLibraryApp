@@ -7,7 +7,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import android.widget.Toast
 import upn.edu.pe.huanchacolibraryapp.models.entity.Estudiante
-import upn.edu.pe.huanchacolibraryapp.services.RetrofitClient
+import upn.edu.pe.huanchacolibraryapp.services.RetrofitEstudiante
 import upn.edu.pe.huanchacolibraryapp.utils.AdaptadorEstudiante
 
 class ResponseApiServiceEstudiante {
@@ -15,7 +15,7 @@ class ResponseApiServiceEstudiante {
                                 carrera:String?, email:String?, toast: Toast) {
 
                 val e = Estudiante(0, apellidos, nombre, carrera, email)
-                val r = RetrofitClient.buildService(ApiServiceEstudiante::class.java)
+                val r = RetrofitEstudiante.buildService(ApiServiceEstudiante::class.java)
                 val call =r.grabaEstudiante(e)
                 var mensaje: String = ""
 
@@ -35,7 +35,7 @@ class ResponseApiServiceEstudiante {
                 })
     }
             fun listarEstudiantes(context: Context, listView: ListView){
-                val r = RetrofitClient.buildService(ApiServiceEstudiante::class.java)
+                val r = RetrofitEstudiante.buildService(ApiServiceEstudiante::class.java)
                 val call = r.listarEstudiantes()
 
                 call!!.enqueue(object :Callback<List<Estudiante>> {

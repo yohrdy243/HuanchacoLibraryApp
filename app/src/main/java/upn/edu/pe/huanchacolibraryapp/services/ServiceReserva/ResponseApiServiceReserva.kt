@@ -6,11 +6,11 @@ import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import upn.edu.pe.huanchacolibraryapp.models.entity.Libro
+
 import upn.edu.pe.huanchacolibraryapp.models.entity.Reserva
-import upn.edu.pe.huanchacolibraryapp.services.RetrofitClient
-import upn.edu.pe.huanchacolibraryapp.services.ServiceLibro.ApiServiceLibro
-import upn.edu.pe.huanchacolibraryapp.utils.AdaptadorLibro
+
+import upn.edu.pe.huanchacolibraryapp.services.RetrofitReserva
+
 import upn.edu.pe.huanchacolibraryapp.utils.AdaptadorReserva
 
 class ResponseApiServiceReserva {
@@ -18,7 +18,7 @@ class ResponseApiServiceReserva {
                          fecha:String?, toast: Toast) {
 
             val r = Reserva(0,libro_fk,estudiante_fk,fecha)
-            val re = RetrofitClient.buildService(ApiServiceReserva::class.java)
+            val re = RetrofitReserva.buildService(ApiServiceReserva::class.java)
             val call = re.grabaReserva(r)
             var mensaje: String=""
 
@@ -39,7 +39,7 @@ class ResponseApiServiceReserva {
         }
 
         fun listarReserva(context: Context, listView: ListView){
-            val r = RetrofitClient.buildService(ApiServiceReserva::class.java)
+            val r = RetrofitReserva.buildService(ApiServiceReserva::class.java)
             val call = r.listarReservas()
 
             call!!.enqueue(object :Callback<List<Reserva>> {

@@ -6,11 +6,9 @@ import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import upn.edu.pe.huanchacolibraryapp.models.entity.Estudiante
+
 import upn.edu.pe.huanchacolibraryapp.models.entity.Libro
-import upn.edu.pe.huanchacolibraryapp.services.RetrofitClient
-import upn.edu.pe.huanchacolibraryapp.services.ServiceEstudiante.ApiServiceEstudiante
-import upn.edu.pe.huanchacolibraryapp.utils.AdaptadorEstudiante
+import upn.edu.pe.huanchacolibraryapp.services.RetrofitLibro
 import upn.edu.pe.huanchacolibraryapp.utils.AdaptadorLibro
 
 class ResponseApiServiceLibro {
@@ -18,7 +16,7 @@ class ResponseApiServiceLibro {
                         categoriaLibro:String?, ejemplarLibro:String?, toast: Toast) {
 
         val l = Libro(0,nombreLibro,editorialLibro,idiomaLibro,categoriaLibro,ejemplarLibro)
-        val r = RetrofitClient.buildService(ApiServiceLibro::class.java)
+        val r = RetrofitLibro.buildService(ApiServiceLibro::class.java)
         val call =r.grabaLibro(l)
         var mensaje: String =""
 
@@ -39,7 +37,7 @@ class ResponseApiServiceLibro {
     }
 
     fun listarLibros(context: Context, listView: ListView){
-        val r = RetrofitClient.buildService(ApiServiceLibro::class.java)
+        val r = RetrofitLibro.buildService(ApiServiceLibro::class.java)
         val call = r.listarLibros()
 
         call!!.enqueue(object :Callback<List<Libro>> {
