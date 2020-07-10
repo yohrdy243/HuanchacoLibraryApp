@@ -29,11 +29,9 @@ class MenuSlideActivity : AppCompatActivity() {
 
         appBarConfiguration = AppBarConfiguration(
             setOf(
-
                 R.id.nav_Libro,
                 R.id.nav_Reserva,
                 R.id.nav_Estudiante
-
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
