@@ -24,11 +24,17 @@ class Libro {
     @Expose
     var ejemplarLibro: String? =null
 
-    constructor(idLibro: Int, nombreLibro: String?, editorialLibro: String?, categoriaLibro: String?, ejemplarLibro: String?){
+    @SerializedName("idiomaLibro")
+    @Expose
+    var idiomaLibro: String? =null
+
+    constructor(idLibro: Int, nombreLibro: String?, editorialLibro: String?,
+                categoriaLibro: String?, ejemplarLibro: String?,idiomaLibro:String?){
         this.idLibro=idLibro
         this.nombreLibro=nombreLibro
         this.editorialLibro=editorialLibro
         this.categoriaLibro=categoriaLibro
         this.ejemplarLibro=ejemplarLibro
+        this.idiomaLibro=idiomaLibro
     }
 }
