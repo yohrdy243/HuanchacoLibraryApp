@@ -1,11 +1,17 @@
 package upn.edu.pe.huanchacolibraryapp.services.ServiceLibro
 
+import android.content.Context
+import android.widget.ListView
 import android.widget.Toast
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import upn.edu.pe.huanchacolibraryapp.models.entity.Estudiante
 import upn.edu.pe.huanchacolibraryapp.models.entity.Libro
 import upn.edu.pe.huanchacolibraryapp.services.RetrofitClient
+import upn.edu.pe.huanchacolibraryapp.services.ServiceEstudiante.ApiServiceEstudiante
+import upn.edu.pe.huanchacolibraryapp.utils.AdaptadorEstudiante
+import upn.edu.pe.huanchacolibraryapp.utils.AdaptadorLibro
 
 class ResponseApiServiceLibro {
     fun grabaLibro(idLibro: Int, nombreLibro:String?,editorialLibro:String?,idiomaLibro:String?,
@@ -28,6 +34,26 @@ class ResponseApiServiceLibro {
                 mensaje="Reintente nuevamente"
                 toast.setText(mensaje)
                 toast.show()
+            }
+        })
+    }
+
+    fun listarLibros(context: Context, listView: ListView){
+        val r = RetrofitClient.buildService(ApiServiceLibro::class.java)
+        val call = r.listarLibros()
+
+        call!!.enqueue(object :Callback<List<Libro>> {
+            override fun onResponse(call: Call<List<Libro>>, response: Response<List<Libro>>) {
+                if(response.isSuccessful){
+                    val rpta =response.body()!!
+                    val adap = AdaptadorLibro(context,rpta)
+                    listView.adapter = adap
+                }
+            }
+
+            override fun onFailure(call: Call<List<Libro>>, t: Throwable) {
+                println(t.toString())
+
             }
         })
     }
