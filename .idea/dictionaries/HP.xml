@@ -1,18 +1,22 @@
 <component name="ProjectDictionaryState">
   <dictionary name="HP">
     <words>
+      <w>adaptador</w>
       <w>apellidos</w>
       <w>carrera</w>
       <w>categoria</w>
+      <w>datos</w>
       <w>ejemplar</w>
       <w>estudiante</w>
       <w>estudiantefk</w>
       <w>estudiantes</w>
       <w>fecha</w>
+      <w>fila</w>
       <w>graba</w>
       <w>grabado</w>
       <w>guardada</w>
       <w>idioma</w>
+      <w>introducir</w>
       <w>libro</w>
       <w>librofk</w>
       <w>libros</w>
